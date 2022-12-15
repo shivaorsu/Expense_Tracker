@@ -9,6 +9,9 @@ const Profile = () => {
   const urlInputRef = useRef();
   const history = useHistory();
   const authCtx = useContext(AuthContext);
+  console.log("token", authCtx.token)
+  const token = localStorage.getItem("token");
+  console.log("In local storage", token)
  
 
   fetch(
@@ -16,7 +19,7 @@ const Profile = () => {
     {
       method: "POST",
       body: JSON.stringify({
-        idToken: authCtx.token,
+        idToken: token,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -61,9 +64,9 @@ const Profile = () => {
       {
         method: "POST",
         body: stringify({
-          idToken: authCtx.token,
-          emaildisplayName: nameInputRef,
-          photoUrl: urlInputRef,
+          idToken: token,
+          emaildisplayName: enteredName,
+          photoUrl: enteredUrl,
           returnSecureToken: true,
         }),
         headers: {

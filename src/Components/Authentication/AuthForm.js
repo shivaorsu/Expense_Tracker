@@ -1,17 +1,20 @@
-import { useState, useRef, useContext } from "react";
-
+import { useState,useRef } from "react";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../Store/auth-redux";
+import { expenseActions } from "../../Store/expense.slice";
 import { useHistory } from "react-router-dom";
 
 import classes from "./AuthForm.module.css";
-import AuthContext from "../../Store/auth-context";
+//import AuthContext from "../../Store/auth-context";
 
 const AuthForm = () => {
+    const dispatch=useDispatch()
   const history = useHistory();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmPasswordInputRef = useRef();
 
-  const authCtx = useContext(AuthContext);
+  //const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -75,7 +78,11 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
+        //authCtx.login(data.idToken);
+        dispatch(authActions.login(data.idToken));
+        localStorage.setItem("email", enteredEmail);
+        let email = localStorage.getItem("email").replace(".", "").replace("@", "");
+        dispatch(expenseActions.setEmail(email));
         console.log("User has successfully logged in");
         history.replace("/Welcome");
       })
