@@ -8,18 +8,10 @@ const themeReducer = createSlice({
   reducers: {
     changeTheme(state, action) {
       console.log(action);
-      switch (action.payload) {
-        case "LIGHTMODE":
-          return { darkMode: false };
-
-        case "DARKMODE":
-          return { darkMode: true };
-        default:
-          return state;
-      }
+      state.darkMode=!state.darkMode
     },
   },
 });
 
 export const themeActions = themeReducer.actions;
-export default themeReducer;
+export default themeReducer.reducer

@@ -14,14 +14,14 @@ function App() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.darkMode);
   const email = useSelector((state) => state.expense.email);
-  console.log(email);
+  
   
 
   useEffect(() => {
     if (!email) return;
     console.log("before fetch", email);
     fetch(
-      `https://expense-tracker-acd04-default-rtdb.firebaseio.com/${email}.json`,
+      `https://expense-118bb-default-rtdb.firebaseio.com/${email}.json`,
       {
         method: "GET"
       }
@@ -43,6 +43,7 @@ function App() {
   return (
     <main
       style={
+        
         theme
           ? { backgroundColor: "black", color: "red" }
           : { backgroundColor: "white" }

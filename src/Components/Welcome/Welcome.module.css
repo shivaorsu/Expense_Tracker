@@ -15,7 +15,7 @@
 }
 
 .button {
-    color: rgb(0, 255, 106);
+    color: rgb(176, 234, 200);
     border: none;
     font-style: italic;
     background-color: white;
@@ -41,6 +41,7 @@
 }
 .img {
     width: 20cm;
+    align-items:center;
 }
 
 .buttone {

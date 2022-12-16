@@ -91,7 +91,7 @@ const Welcome = (props) => {
       <section className={classes.expenses}>
         <h1> Day to day expenses</h1>
 
-        <img src="expenses.jpg" alt="expenses" className={classes.img}></img>
+        <img src="Images/expenses.jpg" alt="expenses" className={classes.img}></img>
       </section>
       <button className={classes.buttone} onClick={expensesHandler}>
         Track your expenses now

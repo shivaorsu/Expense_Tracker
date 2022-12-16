@@ -101,8 +101,8 @@ const Profile = () => {
       <section>
         <h1 className={classes.h1}> Update Your Profile</h1>
       </section>
-      <button onClick={mainPageHandler}>Go To Home page</button>
-      <section>
+      <button onClick={mainPageHandler} className={classes.button1}>Go To Home page</button>
+      <section className={classes.reset}>
         <h2 className={classes.h2}>Contact Details</h2>
         <from onSubmit={submitHandler}>
           <div className={classes.div}>

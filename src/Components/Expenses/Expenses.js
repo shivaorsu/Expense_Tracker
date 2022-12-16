@@ -47,9 +47,9 @@ const Expenses = (props) => {
   
     const onClick = () => {
       
-      if (darkMode) {
-        dispatch(themeActions.changeTheme("LIGHTMODE"));
-      } else dispatch(themeActions.changeTheme("DARKMODE"));
+      
+        dispatch(themeActions.changeTheme());
+      
     
     };
   
@@ -82,7 +82,7 @@ const Expenses = (props) => {
       };
   
       fetch(
-        `https://tracker-839f1-default-rtdb.firebaseio.com/${email}.json`,
+        `https://expense-118bb-default-rtdb.firebaseio.com/${email}.json`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -130,8 +130,9 @@ const Expenses = (props) => {
             className={`btn ${darkMode ? "btn-dark" : "btn-light"}`}
             onClick={onClick}
           >
+            
             {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          </button>
+          </button> 
         )}
   
         <form className={classes.form} onSubmit={showUserHandler}>

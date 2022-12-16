@@ -29,6 +29,20 @@
 }
 
 .button {
-    background-color: rgba(233, 59, 59, 0.774);
+    background-color: rgba(244, 191, 191, 0.774);
     border: 2px;
+}
+/* .reset{
+    margin: 10rem auto;
+    width: 95%;
+    max-width: 30rem;
+    border-radius: 20px;
+    background-color: rgb(249, 200, 169);
+    box-shadow: 0 1px 4px rgba(12, 12, 12, 0.2);
+    padding: 2rem;
+    text-align: center;
+    color: black;
+}  */
+.button1 {
+    align-items: center;
 }
